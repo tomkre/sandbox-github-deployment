@@ -11,6 +11,8 @@ jobs:
     name: Reads payload
     runs-on: ubuntu-22.04
     steps:
+      - name: Checkout code
+        users: actions/checkout@v4
       - name: Reads payload fields
         run: |
           echo 'App name is: ${{ env.APP_NAME }}'
