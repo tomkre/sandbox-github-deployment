@@ -5,6 +5,7 @@ on:
 env:
   APP_NAME: ${{ github.event.client_payload.app_name }}
   APP_VERSION: ${{ github.event.client_payload.app_version }}
+  APP_AUTHOR: ${{ github.event.client_payload.app_author }}
 jobs:
   read-payload:
     name: Reads payload
@@ -13,4 +14,4 @@ jobs:
       - name: Reads payload fields
         run: |
           echo 'App name is: ${{ env.APP_NAME }}'
-          echo 'App version is: ${{ env.APP_NAME }}'
+          echo 'App version is: ${{ env.APP_VERSION }}'
