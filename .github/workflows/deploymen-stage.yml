@@ -15,3 +15,10 @@ jobs:
         run: |
           echo 'App name is: ${{ env.APP_NAME }}'
           echo 'App version is: ${{ env.APP_VERSION }}'
+          echo 'App author is: ${{ env.APP_AUTHOR }}'
+          date >> audit.log
+      - name: Auto commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'Update audit data'
+          branch: master
