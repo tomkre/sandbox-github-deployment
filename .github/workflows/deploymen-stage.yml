@@ -10,6 +10,8 @@ jobs:
   read-payload:
     name: Reads payload
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
